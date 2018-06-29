@@ -1,11 +1,29 @@
 
 var lineNumber = [];
+var currentTicket = 0
+  
+function takeANumber(lineNumber){
+  currentTicket++
+  lineNumber.push(currentTicket)
+  return(`Welcome! You're ticket number # ${currentTicket}`)
+}
+
+// takeANumber(lineNumber) => "Welcome! You're ticket number #1" [1]
+// takeANumber(lineNumber) => "Welcome! You're ticket number #2" [1, 2]
+
+// nowServing(lineNumber) => "Currently serving: #1" [2]
+// nowServing(lineNumber) => "Currently serving: #2" []
+
+// takeANumber(lineNumber) => "Welcome! You're ticket number #3" [3]
+
 
 function takeANumber(lineNumber, name){
   lineNumber.push(`${name}`);
     
   return (`Welcome, ${name}. You are number ${ lineNumber.length} in line.`)
 }
+
+// takeANumber(lineNumber, "Prince") 
 
 function nowServing(firstInLine) {
   let i = 0;
